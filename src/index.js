@@ -91,17 +91,20 @@ function GetImagesAsync (){
 }
 
 function GetImagesSync (){
-  //ASINCRONA
+  //SINCRONA
   var req  = new XMLHttpRequest();
   var req2 = new XMLHttpRequest();
   var req3 = new XMLHttpRequest();
   var req4 = new XMLHttpRequest();
-  req.open('GET', 'http://localhost:10000/image/image-1.jpg');
-  req2.open('GET', 'http://localhost:10000/image/image-2.jpg');
-  req3.open('GET', 'http://localhost:10000/image/image-3.jpg');
-  req4.open('GET', 'http://localhost:10000/image/image-4.jpg');
+  req.open('GET', 'http://localhost:10000/image/image-1.jpg', false);
+  req2.open('GET', 'http://localhost:10000/image/image-2.jpg', false);
+  req3.open('GET', 'http://localhost:10000/image/image-3.jpg', false);
+  req4.open('GET', 'http://localhost:10000/image/image-4.jpg', false);
 
-  
+    req.send(null); 
+    req2.send(null); 
+    req3.send(null); 
+    req4.send(null); 
       if (req.status===200) 
       {
         var res = req.response
@@ -164,12 +167,6 @@ function GetImagesSync (){
       else{
         console.log("not found")
       }
-    
-  
-  req.send(null); 
-  req2.send(null); 
-  req3.send(null); 
-  req4.send(null); 
 }
 var h=document.getElementById("klk");
 h.onclick = GetImagesAsync
