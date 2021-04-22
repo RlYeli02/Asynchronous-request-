@@ -3,16 +3,22 @@ var getImagen = document.getElementById("imagen-table")
 function GetImages (){
     //ASINCRONA
     var req = new XMLHttpRequest();
-    
-    req.open('GET', 'https://dog.ceo/api/breeds/image/random');
+    req.open('GET', 'http://localhost:10000/image/image-1.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-2.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-3.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-4.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-5.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-6.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-7.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-8.jpg');
+    // req.open('GET', 'http://localhost:10000/image/image-9.jpg');
     req.onreadystatechange = function () {
       if (req.status===200) 
       {
-
-        var k = JSON.parse(req.response)
-        console.log(k.message)
+        var res = req.response.split(",")[1];
+        console.log(res)
         var imagen = document.createElement("img")
-        imagen.src = k.message
+        imagen.src = res
         imagen.className ="CuteDoggo";
         getImagen.appendChild(imagen)
       }
@@ -34,4 +40,4 @@ function GetImages (){
     //     console.log(req.response)
     // }
 }
-document.querySelector(".klk").addEventListener("click", GetImages)
+// document.querySelector(".klk").addEventListener("click", GetImages)
