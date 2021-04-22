@@ -30,3 +30,5 @@ function GetImages (){
     };
     req.send(null); 
 }
+var h=document.getElementById("klk");
+h.onclick = GetImages

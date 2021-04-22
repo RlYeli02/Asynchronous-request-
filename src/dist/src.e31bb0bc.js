@@ -123,32 +123,36 @@ var getImagen = document.getElementById("imagen-table");
 function GetImages() {
   //ASINCRONA
   var req = new XMLHttpRequest();
-  req.open('GET', 'https://dog.ceo/api/breeds/image/random');
+  req.open('GET', 'http://localhost:10000/image/image-1.jpg'); // req.open('GET', 'http://localhost:10000/image/image-2.jpg');
+  // req.open('GET', 'http://localhost:10000/image/image-3.jpg');
+  // req.open('GET', 'http://localhost:10000/image/image-4.jpg');
+  // req.open('GET', 'http://localhost:10000/image/image-5.jpg');
+  // req.open('GET', 'http://localhost:10000/image/image-6.jpg');
+  // req.open('GET', 'http://localhost:10000/image/image-7.jpg');
+  // req.open('GET', 'http://localhost:10000/image/image-8.jpg');
+  // req.open('GET', 'http://localhost:10000/image/image-9.jpg');
 
   req.onreadystatechange = function () {
-    if (req.status === 200) {
-      var k = JSON.parse(req.response);
-      console.log(k.message);
-      var imagen = document.createElement("img");
-      imagen.src = k.message;
-      imagen.className = "CuteDoggo";
-      getImagen.appendChild(imagen);
-    } else {
-      console.log("not found");
+    if (req.readyState == 4) {
+      if (req.status === 200) {
+        var res = req.response;
+        console.log(res);
+        var imagen = document.createElement("img");
+        imagen.src = res;
+        imagen.className = "CuteDoggo";
+        getImagen.appendChild(imagen);
+      } else {
+        console.log("not found");
+      }
     }
   };
 
-  req.send(null); //SINCRONA
-  // var req = new XMLHttpRequest();
-  // console.log("hola")
-  // console.log("klk")
-  // req.open('GET', 'https://dog.ceo/api/breeds/image/random', true)
-  // req.send(null);
-  // if(req.status==200){
-  //     console.log(req.response)
-  // }
+  req.send(null);
 }
-},{}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+var h = document.getElementById("klk");
+h.onclick = GetImages;
+},{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -176,7 +180,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51366" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58199" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -352,5 +356,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.e31bb0bc.js.map
