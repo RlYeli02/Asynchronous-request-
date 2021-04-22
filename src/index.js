@@ -200,6 +200,12 @@ function GetImagesSync (){
   var req2 = new XMLHttpRequest();
   var req3 = new XMLHttpRequest();
   var req4 = new XMLHttpRequest();
+  var req5 = new XMLHttpRequest();
+  var req6 = new XMLHttpRequest();
+  var req7 = new XMLHttpRequest();
+  var req8 = new XMLHttpRequest();
+  var req9 = new XMLHttpRequest();
+
   req.open('GET', 'http://localhost:10000/image/image-1.jpg', false);
   req2.open('GET', 'http://localhost:10000/image/image-2.jpg', false);
   req3.open('GET', 'http://localhost:10000/image/image-3.jpg', false);
@@ -219,7 +225,7 @@ function GetImagesSync (){
     req7.send(null); 
     req8.send(null); 
     req9.send(null); 
-    
+  // Req
       if (req.status===200) 
       {
         var res = req.response
@@ -276,6 +282,76 @@ function GetImagesSync (){
         // console.log(res)
         var imagen = document.createElement("img")
         imagen.src = res
+        imagen.className ="CuteDoggo";
+        getImagen.appendChild(imagen)
+      }
+      else{
+        console.log("not found")
+      }
+
+
+      // Req 5
+      if (req5.status===200) 
+      {
+        var res5 = req5.response
+        var imagen = document.createElement("img")
+        imagen.src = res5
+        imagen.className ="CuteDoggo";
+        getImagen.appendChild(imagen)
+      }
+      else{
+        console.log("not found")
+      }
+
+
+      // Req 6
+      if (req6.status===200) 
+      {
+        var res6 = req6.response
+        var imagen = document.createElement("img")
+        imagen.src = res6
+        imagen.className ="CuteDoggo";
+        getImagen.appendChild(imagen)
+      }
+      else{
+        console.log("not found")
+      }
+
+
+      // Req 7
+      if (req7.status===200) 
+      {
+        var res7 = req7.response
+        var imagen = document.createElement("img")
+        imagen.src = res7
+        imagen.className ="CuteDoggo";
+        getImagen.appendChild(imagen)
+      }
+      else{
+        console.log("not found")
+      }
+
+
+      // Req 8
+      if (req8.status===200) 
+      {
+        var res8 = req8.response
+        var imagen = document.createElement("img")
+        imagen.src = res8
+        imagen.className ="CuteDoggo";
+        getImagen.appendChild(imagen)
+      }
+      else{
+        console.log("not found")
+      }
+
+
+      // Req 9
+      if (req9.status===200) 
+      {
+        var res9 = req9.response
+        var imagen = document.createElement("img")
+        imagen.src = res9
         imagen.className ="CuteDoggo";
         getImagen.appendChild(imagen)
       }
