@@ -90,3 +90,5 @@ function GetImages (){
     req3.send(null); 
     req4.send(null); 
 }
+var h=document.getElementById("klk");
+h.onclick = GetImages
