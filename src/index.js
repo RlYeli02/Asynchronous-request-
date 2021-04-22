@@ -13,31 +13,20 @@ function GetImages (){
     // req.open('GET', 'http://localhost:10000/image/image-8.jpg');
     // req.open('GET', 'http://localhost:10000/image/image-9.jpg');
     req.onreadystatechange = function () {
-      if (req.status===200) 
-      {
-        var res = req.response.split(",")[1];
-        console.log(res)
-        var imagen = document.createElement("img")
-        imagen.src = res
-        imagen.className ="CuteDoggo";
-        getImagen.appendChild(imagen)
-      }
-      else{
+      if (req.readyState==4){
+        if (req.status===200) 
+        {
+          var res = req.response
+          console.log(res)
+          var imagen = document.createElement("img")
+          imagen.src = res
+          imagen.className ="CuteDoggo";
+          getImagen.appendChild(imagen)
+        }
+        else{
           console.log("not found")
+        }
       }
     };
     req.send(null); 
-
-    //SINCRONA
-
-    // var req = new XMLHttpRequest();
-    // console.log("hola")
-    
-    // console.log("klk")
-    // req.open('GET', 'https://dog.ceo/api/breeds/image/random', true)
-    // req.send(null);
-    // if(req.status==200){
-    //     console.log(req.response)
-    // }
 }
-// document.querySelector(".klk").addEventListener("click", GetImages)
