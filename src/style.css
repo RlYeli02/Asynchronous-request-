@@ -1,7 +1,16 @@
 #imagen-table{
     border: 1px solid black;
-   
+    display: grid;
+    grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3];
+    grid-template-rows: [y0] 1fr [y1] 1fr [y2] 1fr [y3];
 }
+.item {
+    background-color: #80cbc4;
+    border: 1px solid #fff;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
 .CuteDoggo{
     margin: 2rem;
     width: 12rem;
