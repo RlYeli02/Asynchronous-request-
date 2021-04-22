@@ -1,37 +1,29 @@
 var getImagen = document.getElementById("imagen-table")
+var req = new XMLHttpRequest();
+var url = 'http://localhost:10000/image/image-3.jpg';
 
 function GetImages (){
-    //ASINCRONA
-    var req = new XMLHttpRequest();
-    
-    req.open('GET', 'https://dog.ceo/api/breeds/image/random');
-    req.onreadystatechange = function () {
-      if (req.status===200) 
-      {
+       //ASINCRONA
+      var req = new XMLHttpRequest();
+      var url = 'http://localhost:10000/image/image-3.jpg';
 
-        var k = JSON.parse(req.response)
-        console.log(k.message)
-        var imagen = document.createElement("img")
-        imagen.src = k.message
-        imagen.className ="CuteDoggo";
-        getImagen.appendChild(imagen)
-      }
-      else{
+      req.open('GET', url, true);
+
+      req.onreadystatechange = function () {
+     
+      if (req.readyState==4){
+        if (req.status===200) 
+        {
+          var imagen = document.createElement("img")
+          imagen.src = req.response
+          imagen.className ="CuteDoggo";
+          getImagen.appendChild(imagen)
+        }
+        else{
           console.log("not found")
+        }
+
       }
     };
     req.send(null); 
-
-    //SINCRONA
-
-    // var req = new XMLHttpRequest();
-    // console.log("hola")
-    
-    // console.log("klk")
-    // req.open('GET', 'https://dog.ceo/api/breeds/image/random', true)
-    // req.send(null);
-    // if(req.status==200){
-    //     console.log(req.response)
-    // }
 }
-document.querySelector(".klk").addEventListener("click", GetImages)

@@ -123,7 +123,7 @@ var getImagen = document.getElementById("imagen-table");
 function GetImages() {
   //ASINCRONA
   var req = new XMLHttpRequest();
-  req.open('GET', 'https://dog.ceo/api/breeds/image/random');
+  req.open('GET', 'http://localhost:10000/image/image-1.jpg');
 
   req.onreadystatechange = function () {
     if (req.status === 200) {
@@ -148,7 +148,9 @@ function GetImages() {
   //     console.log(req.response)
   // }
 }
-},{}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+document.querySelector(".klk").addEventListener("click", GetImages);
+},{}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -176,7 +178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51366" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51212" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -352,5 +354,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.e31bb0bc.js.map
