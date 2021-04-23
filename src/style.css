@@ -16,6 +16,35 @@
     width: 12rem;
     height: 12rem;
 }
+img {
+    width: 150px;
+    height: 150px;
+}
+#klk {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    width: 250px;
+    height: 100px;
+  }
+#klkSync {
+    background-color: burlywood; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    width: 250px;
+    height: 100px;
+
+  }
 /* .imagen{
     margin: 2rem;
     border: 1px solid blue;
